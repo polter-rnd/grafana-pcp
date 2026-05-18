@@ -44,10 +44,11 @@ jobs:
           exit 1
         fi
 
-    - name: Sign plugin
-      run: make sign
-      env:
-        GRAFANA_API_KEY: ${{ secrets.GRAFANA_API_KEY }}
+    # Don't sign since it's a private fork
+    # - name: Sign plugin
+    #   run: make sign
+    #   env:
+    #     GRAFANA_API_KEY: ${{ secrets.GRAFANA_API_KEY }}
 
     - name: Create plugin zip file
       run: make zip
