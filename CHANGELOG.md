@@ -1,5 +1,9 @@
 # Change Log
 
+## 6.0.1 (2026-05-18)
+
+* **checklist**: fix TroubleshootingPanel used in PCP Vector Checklist
+
 ## 6.0.0 (2026-04-30)
 
 * **build**: update dependencies for grafana 12.4.3 (transition to grafana/create-plugin from grafana/toolkit)
