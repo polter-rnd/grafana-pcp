@@ -11,7 +11,15 @@
  */
 // include: @usecs
 
+#ifndef BPFTRACE_HAVE_BTF
 #include <linux/sched.h>
+#else
+/*
+ * With BTF providing types, full headers are not needed.
+ * We only need to supply the preprocessor defines used in this script.
+ */
+#define TASK_RUNNING 0
+#endif
 
 tracepoint:sched:sched_wakeup,
 tracepoint:sched:sched_wakeup_new
@@ -29,5 +37,5 @@ tracepoint:sched:sched_switch
 	if ($ns) {
 		@usecs = hist((nsecs - $ns) / 1000);
 	}
-	delete(@qtime[args->next_pid]);
+	$_ = delete(@qtime[args->next_pid]);
 }
