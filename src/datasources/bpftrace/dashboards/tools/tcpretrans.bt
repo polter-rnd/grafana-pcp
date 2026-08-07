@@ -19,8 +19,17 @@
 // include: @output
 // table-retain-lines: 10
 
+#ifndef BPFTRACE_HAVE_BTF
 #include <linux/socket.h>
 #include <net/sock.h>
+#else
+/*
+ * With BTF providing types, full headers are not needed.
+ * We only need to supply the preprocessor defines used in this script.
+ */
+#define AF_INET 2
+#define AF_INET6 10
+#endif
 
 BEGIN
 {
