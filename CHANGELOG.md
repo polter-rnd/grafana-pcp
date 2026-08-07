@@ -9,6 +9,7 @@
 * **geomaps**: Add clear error when longitude and latitude labels are missing. ([#238](https://github.com/performancecopilot/grafana-pcp/pull/238))
 * **vector, bpftrace**: Replace legacy CSS classes with @grafana/ui FieldSet in config editors.
 * **config**: Update app config to use function components and theme-aware colors.
+* **bpftrace**: Fix compile errors on modern kernels
 
 ### Build & Maintenance
 
